@@ -1,0 +1,22 @@
+local:
+  - name: chromium
+  - name: firefox
+  - name: webkit
+
+browserstack:
+  desktop:
+    - browser: Chrome
+      browser_version: latest
+      os: Windows
+      os_version: "11"
+    - browser: Safari
+      browser_version: latest
+      os: OS X
+      os_version: Sonoma
+  mobile:
+    - device: iPhone 15
+      os_version: "17"
+      real_mobile: true
+    - device: Samsung Galaxy S23
+      os_version: "13.0"
+      real_mobile: true

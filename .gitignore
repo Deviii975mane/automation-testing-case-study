@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Playwright
+playwright-report/
+test-results/
+
+# Reports (generated at runtime)
+reports/*.html
+reports/*.png
+reports/allure-results/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,11 @@
+company1:
+  base_url: https://company1.workflowpro.com
+  api_url: https://company1.workflowpro.com/api/v1
+  tenant_id: "1001"
+  tenant_marker: "Company1"
+
+company2:
+  base_url: https://company2.workflowpro.com
+  api_url: https://company2.workflowpro.com/api/v1
+  tenant_id: "1002"
+  tenant_marker: "Company2"

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "valid_project": {
+      "name": "Test Project",
+      "description": "Automated integration test project",
+      "team_members": []
+    },
+    "project_with_members": {
+      "name": "Team Project",
+      "description": "Project with assigned members",
+      "team_members": ["manager@company1.com", "employee@company1.com"]
+    }
+  },
+  "notes": "Project names are suffixed with a unique run-ID at runtime to avoid collisions in parallel CI runs."
+}

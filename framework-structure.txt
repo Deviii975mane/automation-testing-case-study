@@ -1,0 +1,41 @@
+workflowpro-automation/            # WorkFlow Pro — QA automation framework
+├── config/                        # environment & browser configuration
+│   ├── environments.yaml          # company1/company2 URLs & API endpoints (multi-tenant)
+│   └── browsers.yaml              # local + BrowserStack desktop/mobile capabilities
+├── src/                           # framework code
+│   ├── pages/                     # Page Object Model (UI)
+│   │   ├── base_page.py           # common actions: open, click, fill, is_visible, screenshot
+│   │   ├── login_page.py          # login form + 2FA handling
+│   │   └── dashboard_page.py      # project cards, welcome message
+│   ├── api/                       # API client layer
+│   │   ├── base_client.py         # auth, headers (X-Tenant-ID), retries
+│   │   └── projects_client.py     # create/get/delete projects
+│   └── utils/                     # shared utilities
+│       ├── __init__.py
+│       ├── config_loader.py       # loads env/browser config by ENV var
+│       └── driver_factory.py      # local vs BrowserStack, web vs mobile
+├── data/                          # test data (fixtures)
+│   ├── users.json                 # role-based users (Admin/Manager/Employee) per tenant
+│   └── test_data.json             # project/test payloads
+├── tests/                         # automated test scripts
+│   ├── ui/                        # Part 1 — flaky login fixed + original
+│   │   ├── test_login_fixed.py
+│   │   └── test_login_original.py
+│   ├── api/
+│   │   └── test_projects_api.py
+│   └── integration/               # Part 3 — API + UI + mobile flow
+│       └── test_project_creation_flow.py
+├── docs/                          # test plan & approach documentation
+│   ├── TEST_PLAN.md
+│   ├── TESTING_APPROACH.md
+│   ├── ASSUMPTIONS.md
+│   └── PART1_FLAKY_ANALYSIS.md
+├── reports/                       # test execution reports (generated at runtime)
+│   ├── README.md
+│   └── sample-report.md
+├── conftest.py                    # pytest fixtures (browser, tenant, user, api client)
+├── pytest.ini                     # markers: @smoke, @regression, @mobile
+├── requirements.txt               # Python dependencies
+├── README.md                      # setup & usage instructions
+├── .gitignore
+└── .github/workflows/ci.yaml      # CI/CD pipeline (smoke on PR, nightly regression)
